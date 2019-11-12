@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "To Do List",
+  "description": "To Do List with Timer",
+  "version": "1.0.0",
+  "permissions": ["storage", "alarms", "tabs", "notifications"],
+  "icons": {
+    "48": "icons/48-master.png"
+  },
+  "options_ui": {
+    "page": "default.html",
+    "chrome_style": true
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/48-master.png"
+    },
+    "default_title": "To Do List with Timer",
+    "default_popup": "default.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content_scripts.js"]
+    }
+  ]
+}
