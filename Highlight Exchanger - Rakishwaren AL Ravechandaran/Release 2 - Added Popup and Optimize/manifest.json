@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+  "name": "Highlight Currency Converter",
+  "description": "Highlight Currency Converter",
+  "version": "1.0.0",
+  "permissions": ["http://*/*", "https://*/*", "tabs"],
+  "icons": {
+    "48": "icons/48-master.png"
+  },
+  "background": {
+    "scripts": ["js/background.js"]
+  },
+  "browser_action": {
+    "default_icon": {
+      "48": "icons/48-master.png"
+    },
+    "default_title": "Highlight Currency Converter"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content_scripts.js"]
+    }
+  ]
+}
