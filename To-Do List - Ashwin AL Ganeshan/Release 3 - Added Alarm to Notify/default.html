@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>To-Do List</title>
+    <style type="text/css">
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        min-width: 650px;
+      }
+    </style>
+
+    <script src="lib/jquery.js"></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="lib/bootstrap4/css/bootstrap.min.css"
+    />
+    <script src="lib/bootstrap4/js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body class="m-2">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-lg-12">
+          <h4 style="font-weight: 600;">To-Do List</h4>
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div class="col-lg-12">
+          <span>Total Reminders: <strong id="total_reminders"></strong></span>
+          <input type="hidden" value="" id="selected_ind" />
+        </div>
+      </div>
+      <div class="row mb-2">
+        <div
+          class="col-lg-12"
+          id="do_list"
+          style="max-height: 300px; height: 300px; overflow-y: scroll;"
+        ></div>
+      </div>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="d-flex justify-content-end">
+            <button
+              type="button"
+              id="add_do"
+              class="btn btn-outline-primary mr-1"
+            >
+              Add TO-DO
+            </button>
+            <button type="button" id="del_do" class="btn btn-outline-danger">
+              Delete TO-DO
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="row mt-2" id="add_field" style="display: none;">
+        <div class="col-lg-12">
+          <h5>Add New TO-DO</h5>
+          <div class="row">
+            <div class="col-sm-6">
+              <label for="new_title">Title: </label>
+              <input
+                type="text"
+                maxlength="20"
+                minlength="6"
+                id="new_title"
+                class="form-control"
+                placeholder="Title of TO-DO (6 - 20 characters, required)"
+              />
+            </div>
+            <div class="col-sm-6">
+              <label for="new_priority">Priority: </label>
+              <select id="new_priority" class="form-control">
+                <option value="3">Low</option>
+                <option value="2">Medium</option>
+                <option value="1" selected>High</option>
+              </select>
+            </div>
+          </div>
+          <div class="row mt-1">
+            <div class="col-sm-6">
+              <label for="new_desc">Description: </label>
+              <textarea
+                id="new_desc"
+                class="form-control w-100"
+                style="resize: none;"
+                maxlength="200"
+                minlength="10"
+                placeholder="Description of TO-DO (10 - 200 characters, required)"
+              ></textarea>
+            </div>
+            <div class="col-sm-6">
+              <label for="new_time">Set Alert (Optional): </label>
+              <select id="new_time" class="form-control">
+                <option value="no">No Set</option>
+                <option value="1m">1 minute</option>
+                <option value="5m">5 minutes</option>
+                <option value="10m">10 minutes</option>
+                <option value="30m">30 minutes</option>
+                <option value="1h">1 hour</option>
+                <option value="4h">4 hours</option>
+                <option value="8h">8 hours</option>
+                <option value="1d">1 day</option>
+                <option value="3d">3 days</option>
+                <option value="1w">1 week</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/timer_controller.js"></script>
+    <script src="js/storage_handler.js"></script>
+    <script src="js/event_controller.js"></script>
+  </body>
+</html>
